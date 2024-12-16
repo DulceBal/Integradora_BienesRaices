@@ -12,8 +12,9 @@ const categorias = [
         nombre: 'Terreno'
     },
     {
-        nombre: 'Cabaña'
+        nombre: 'Establecimiento'
     }
+
 ]
 
 export default categorias
