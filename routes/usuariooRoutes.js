@@ -1,47 +1,21 @@
 import express from "express";
+import { mostrarUsuario, subirFotoPerfil, almacenarFotoPerfil,mostrarMensajes,mostrarFormularioEditar,actualizarPerfil,responderMensaje } from "../controllers/usuarioController.js";
 import upload from '../middleware/upload.js';
-import { 
-    formularioLogin, 
-    formularioRegistro, 
-    registrar, 
-    confirmar, 
-    formularioOlvidePassword, 
-    resetPassword, 
-    comprobarToken, 
-    nuevoPassword, 
-    autenticar, 
-    cerrarSesion,
-    mostrarUsuario,
-    subirFotoPerfil,
-    almacenarFotoPerfil
-} from "../controllers/usuarioController.js";
 
 const router = express.Router();
 
-// Routing para login
-router.get('/login', formularioLogin);
-router.post('/login', autenticar);
+router.get('/:id', mostrarUsuario); // Mostrar el perfil del usuario
+router.get('/:id/subir-foto', subirFotoPerfil); // Subir foto de perfil
+router.post('/:id/subir-foto', upload.single('imagen'), almacenarFotoPerfil); // Guardar foto de perfil
+// En tu archivo de rutas de usuario (usuarioRoutes.js o similar)
+router.get('/:id/editar', mostrarFormularioEditar);
+// En el archivo de rutas de usuario (usuarioRoutes.js o similar)
+router.post('/:id/editar', upload.single('foto'), actualizarPerfil);
 
-// Cerrar sesión
-router.post('/cerrar-sesion', cerrarSesion);
+router.post('/responder-mensaje/:id', responderMensaje);
+// Mostrar los mensajes
+router.get('/mensajes', mostrarMensajes);
 
-// Registro de usuario
-router.get('/registro', formularioRegistro);
-router.post('/registro', registrar);
-
-// Ruta para subir la foto de perfil
-router.get('/registro/:id', subirFotoPerfil);
-router.post('/registro/:id', upload.single('imagen'), almacenarFotoPerfil);
-
-// Confirmar cuenta
-router.get('/confirmar/:token', confirmar);
-
-// Olvidar contraseña
-router.get('/olvide-password', formularioOlvidePassword);
-router.post('/olvide-password', resetPassword);
-router.get('/olvide-password/:token', comprobarToken);
-router.post('/olvide-password/:token', nuevoPassword);
-
- // Ruta para mostrar el perfil del usuario 
-router.get('/:id', mostrarUsuario);
+// Responder un mensaje
+router.post('/responder-mensaje/:id', responderMensaje);
 export default router;

@@ -19,11 +19,11 @@ block contenido
                 form.space-y-5( method="POST" action="/auth/login") 
                     input(type="hidden" name="_csrf" value= csrfToken)
                     div 
-                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="email") Email
-                        input#email.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Escribe tu email" type="email" name="email") 
+                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="email") Correo Electrónico:
+                        input#email.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Escribe tu correo" type="email" name="email") 
                     div 
-                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="password") Password
-                        input#password.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Escribe tu password" type="password" name="password")             
+                        label.block.text-sm.uppercase.text-gray-500.mb-3.font-bold(for="password") Contraseña:
+                        input#password.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Escribe tu contraseña" type="password" name="password")             
                     div.flex.items-center.justify-between 
                         a.text-gray-500.text-xs(href="/auth/registro") ¿No tienes cuenta? Crea una
                         a.text-gray-500.text-xs(href="/auth/olvide-password") Olvide mi Password

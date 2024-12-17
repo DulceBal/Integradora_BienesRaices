@@ -1,3 +1,4 @@
+
 extends ../layout/admin
 
 block styles
@@ -5,8 +6,8 @@ block styles
     meta(name="csrf-token" content= csrfToken)
 block contenido
     .py-10
-        h1.text-4xl.my-10.font-extrabold.text-center.text-peri 🏘️ Bienes
-            span.font-normal Raíces.  
+        h1.text-4xl.my-10.font-extrabold.text-center.text-golden Bienes
+            span.font-normal.text-black Raíces.  
         h2.text-center.text-2xl.font-extrabold= pagina
 
         div(class="bg-white shadow py-8 px-4 rounded mx-auto max-w-4xl my-10 md:px-10")
@@ -14,7 +15,7 @@ block contenido
                 input(type="hidden" name="_csrf" value= csrfToken)
                 
 
-            button(id="publicar" class="mt-5 w-full py-3 bg-winkle hover:bg-palePurple rounded text-white font-bold uppercase cursor-pointer" type="button") Subir Foto de Perfil 
+            button(id="publicar" class="mt-5 w-full py-3 bg-rosa hover:bg-verde rounded text-white font-bold uppercase cursor-pointer" type="button") Subir Foto de Perfil 
 
 
 block scripts 
