@@ -1,16 +1,16 @@
-header.bg-palePurple.p-4 
+header.bg-golden.p-4 
     .container.mx-auto.flex.justify-between.items-center 
-        h1.text-2xl.text-peri.font-extrabold.text-center 🏘️Bienes 
-            span.font-extrabold.text-black Raíces
+        h1.text-2xl.text-.font-extrabold.text-center Bienes 
+            span.font-normal.text-black Raíces
 
         nav(class="my-5 text-sm md:flex md:items-center md:gap-3 font-bold text-white hidden") 
-            a.text-gray-500.text-sm(href="javascript:history.back()" class="bg-winkle hover:bg-palePurple text-white py-2 px-6 rounded-lg") Regresar
-            a(href="/" class="bg-winkle hover:bg-palePurple rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm") Inicio
-            a(href="/mis-propiedades" class="bg-winkle hover:bg-palePurple rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm") Mis propiedades 
+            a.text-gray-500.text-sm(href="javascript:history.back()" class="bg-golden hover:bg-verde text-white py-2 px-6 rounded-lg") REGRESAR
+            a(href="/" class="bg-golden hover:bg-verde rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm") Inicio
+            a(href="/mis-propiedades" class="bg-golden hover:bg-verde rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm") Mis propiedades 
             if usuario
-               a(href=`/usuario/${usuario.id}` class="bg-winkle hover:bg-palePurple rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm") Mi perfil
+               a(href=`/usuario/${usuario.id}` class="bg-golden hover:bg-verde rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm") Mi perfil
             else
-                a(href="/auth/login" class="bg-winkle hover:bg-palePurple rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm") Iniciar Sesión
+                a(href="/auth/login" class="bg-golden hover:bg-verde rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm") Iniciar Sesión
             form(action="/auth/cerrar-sesion" method="POST")  
                 input(type="hidden" name="_csrf" value= csrfToken)
-                input(type="submit" class="bg-winkle hover:bg-palePurple py-2 px-10 rounded-lg" value="Cerrar Sesión")
+                input(type="submit" class="bg-golden hover:bg-verde py-2 px-10 rounded-lg" value="Cerrar Sesión")

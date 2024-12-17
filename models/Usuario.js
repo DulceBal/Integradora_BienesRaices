@@ -11,6 +11,14 @@ const Usuario = db.define('usuarios', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    alias: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    fechaDeNacimiento: {
+        type: DataTypes.DATEONLY,
+        allowNull: true
+    },
     password: {
         type: DataTypes.STRING,
         allowNull: false
@@ -22,15 +30,8 @@ const Usuario = db.define('usuarios', {
     foto: {
         type: DataTypes.STRING,
         allowNull: true
-    },
-    alias: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    fechaDeNacimiento: {
-        type: DataTypes.DATEONLY,
-        allowNull: true
     }
+    
 }, {
     hooks: {
         beforeCreate: async function (usuario) {
