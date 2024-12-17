@@ -12,6 +12,9 @@ const categorias = [
         nombre: 'Terreno'
     },
     {
+        nombre: 'Cabaña'
+    },
+    {
         nombre: 'Establecimiento'
     }
 

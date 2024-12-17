@@ -4,14 +4,14 @@ block contenido
     header.bg-blue.py-5.shadow-md.text-center
         h1.text-5xl.font-extrabold.text-white Bienes Raíces
     div.py-10
-        h1.text-center.font-extrabold.my-10.text-4xl.text-peri Perfil de 
+        h1.text-center.font-extrabold.my-10.text-4xl.text-golden Perfil de 
             span.font-normal.text-black Usuario
         
         // Header con botones
         .bg-white.shadow-md.fixed.top-0.left-0.w-full.z-10
             .flex.justify-between.items-center.px-6.py-4
                 // Botón de Regresar (agregado)
-                a.text-gray-500.text-sm(href="javascript:history.back()" class="bg-peri hover:bg-palePurple text-white py-2 px-6 rounded-lg") Regresar
+                a.text-gray-500.text-sm(href="javascript:history.back()" class="bg-azul hover:bg-palePurple text-white py-2 px-6 rounded-lg") Regresar
                 // Botón de Inicio (estilo de botón más compacto)
                 a(href="/" class="text-white bg-winkle hover:bg-palePurple py-2 px-6 rounded-lg") Inicio
                 // Botón de Cerrar Sesión
@@ -25,9 +25,9 @@ block contenido
                     .w-48.h-48
                         .flex.items-center.justify-center
                             if usuario.foto_perfil
-                                img(src=`/uploads/${usuario.foto_perfil}` alt="Foto de perfil" class="w-full h-full rounded-full object-cover")
+                                img(src=`/uploads/${usuario.foto_perfil}` alt="Foto de perfil" class="w-full h-full rounded-lg")
                             else
-                                img(src="/images/default-profile.png" alt="Foto de perfil" class="w-full h-full rounded-full object-cover")
+                                img(src="/images/default-profile.png" alt="Foto de perfil" class="w-full h-full rounded-lg")
 
                     // Columna derecha (datos del usuario)
                     .ml-8.flex-grow
